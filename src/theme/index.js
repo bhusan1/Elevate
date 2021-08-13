@@ -26,11 +26,17 @@ const colors = {
     bgDark: '#e8e8e8',
     black: '#000000',
     main: '#a7b4b5',
+    newC: '#fbc2eb',
+    boy: '#c2e9fb',
+    lightPinky: '#f285fb',
+    pinky: '#f5576c',
 };
 
 const fontSizes = {
     default: 15,
+    small: 18,
     normal: 20,
+    medium: 23,
     large: 26,
     extraLarge: hp('3%'),
 };

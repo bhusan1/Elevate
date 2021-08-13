@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, ScrollView, Text, View, Alert, Image, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { FlatList, ScrollView, Text, View, Alert, Image, StyleSheet, TouchableOpacity, SafeAreaView, ImageBackground } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFirebase, useFirestore, useFirestoreConnect } from 'react-redux-firebase';
 import {useSelector} from 'react-redux';
@@ -10,6 +10,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import {validate} from "../../commons/helper";
 import {Button, Input, Paper, Overlay} from "../../components";
+import {imgBg} from '../../commons/images';
 
 
 export const Services = () => {
@@ -284,42 +285,63 @@ const submitColorService = () => {
 
         <ScrollView>
 
-        <View style={styles.container}>
+          <ImageBackground source={imgBg} resizeMode="cover" style={styles.imageBG}>
 
-          <View style={styles.listHeadArea}>
-            <Text style={styles.listHeadText}>Women Services</Text>
-          </View>
-          <FlatList
-            style={{width:'100%'}}
-            data = {authUser.role === 'admin'?[...womenServices,'add']: womenServices}
-            renderItem={renderWomenService}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={item=> JSON.stringify(item)}
-          />
+          <View style={styles.containerWomen}>
 
-          <View style={styles.listHeadArea}>
-            <Text style={styles.listHeadText}>Men Services</Text>
-          </View>
-          <FlatList
-            style={{width:'100%'}}
-            data = {authUser.role === 'admin'?[...menServices,'add']: menServices}
-            renderItem={renderMenService}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={item=> JSON.stringify(item)}
-          />
+              <View style={styles.listHeadArea}>
+                <Text style={styles.listHeadText}>Women Services</Text>
+              </View>
+              <FlatList
+                style={{width:'100%'}}
+                data = {authUser.role === 'admin'?[...womenServices,'add']: womenServices}
+                renderItem={renderWomenService}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={item=> JSON.stringify(item)}
+              />
+            </View>
+            </ImageBackground>
 
-          <View style={styles.listHeadArea}>
-            <Text style={styles.listHeadText}>Color</Text>
+            <View style={styles.divider}/>
+
+
+            <ImageBackground source={imgBg} resizeMode="cover" style={styles.imageBG}>
+           <View style={styles.containerMen}>
+
+            <View style={styles.listHeadArea}>
+              <Text style={styles.listHeadText}>Men Services</Text>
+            </View>
+            <FlatList
+              style={{width:'100%'}}
+              data = {authUser.role === 'admin'?[...menServices,'add']: menServices}
+              renderItem={renderMenService}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={item=> JSON.stringify(item)}
+            />
           </View>
-          <FlatList
-            style={{width:'100%'}}
-            data = {authUser.role === 'admin'?[...colorServices,'add']: colorServices}
-            renderItem={renderColorService}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={item=> JSON.stringify(item)}
-          />
+
+          </ImageBackground>
+
+          <View style={styles.divider}/>
+
+          <ImageBackground source={imgBg} resizeMode="cover" style={styles.imageBG}>
+
+          <View style={styles.containerColor}>
+
+            <View style={styles.listHeadArea}>
+              <Text style={styles.listHeadText}>Color</Text>
+            </View>
+            <FlatList
+              style={{width:'100%'}}
+              data = {authUser.role === 'admin'?[...colorServices,'add']: colorServices}
+              renderItem={renderColorService}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={item=> JSON.stringify(item)}
+            />
 
         </View>
+        </ImageBackground>
+        
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -335,30 +357,36 @@ const useStyles = theme => StyleSheet.create({
     position:'relative',
     backgroundColor:'white',
   },
-  container: {
+  imageBG:{
+    flex:1,
+    justifyContent:'center',
+  },
+  containerWomen: {
     flex: 1,
     width:'100%',
     zIndex: 0,
     position:'relative',
     padding: 5,
-    backgroundColor:theme.colors.btnContinue,
+    backgroundColor:theme.colors.ghostWhite,
   },
-  headArea: {
-    flex: 1, 
-    justifyContent: 'center', 
-    marginTop: 19,
+  containerMen: {
+    flex: 1,
+    width:'100%',
+    zIndex: 0,
+    position:'relative',
+    padding: 5,
+    /* backgroundColor:theme.colors.boy, */
   },
-  headText: {
-    fontSize: 22, 
-    color: 'black', 
-    textAlign: 'center', 
-    paddingBottom: 10
+  containerColor: {
+    flex: 1,
+    width:'100%',
+    zIndex: 0,
+    position:'relative',
+    padding: 5,
+    /* backgroundColor:theme.colors.btnContinue, */
   },
-  contText: {
-    fontSize: 12, 
-    color: 'black', 
-    textAlign: 'center',
-    paddingBottom: 3,
+  divider:{
+    margin: theme.wp('5%'),
   },
   image : {
     flex: 1,
@@ -369,7 +397,7 @@ const useStyles = theme => StyleSheet.create({
   lists: {
     flex: 1,
     flexDirection: 'row',
-    marginLeft: theme.wp('3%'),
+    /* marginLeft: theme.wp('3%'), */
   },
   listHeadArea: {
     width: theme.wp('100%'),
@@ -382,17 +410,17 @@ const useStyles = theme => StyleSheet.create({
   },
   listsTitleArea: {
     width: theme.wp('75%'),
-    padding: theme.wp('1%'),
+    padding: theme.wp('2%'),
   },
   listsTitle:{
     marginLeft: theme.wp('3%'),
-    fontSize: 15,
+    fontSize: 17,
     fontWeight: 'bold',
     color: 'white',
   },
   listsPriceArea: {
     width: theme.wp('25%'),
-    paddingTop: theme.hp('2%'),
+    paddingTop: theme.hp('1%'),
   },
   priceTitle: {
     marginLeft: theme.wp('3%'),
@@ -415,12 +443,13 @@ const useStyles = theme => StyleSheet.create({
     zIndex: 2,
   },
   ServiceItem:{
-    borderColor: 'white',
-    borderWidth: 2,
+    borderColor: '#f5576c',
+    borderWidth: 3,
     borderRadius: theme.wp('2%'),
     overflow:'hidden', 
     padding: '1%',
     marginTop: theme.hp('1%'),
+    backgroundColor: theme.colors.pinky,
   },
   ServiceRemove:{
     position:'absolute',

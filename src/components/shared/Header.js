@@ -1,9 +1,30 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import { View, ScrollView, Text, StyleSheet, Alert, Linking, SafeAreaView, FlatList,Image, StatusBar, TouchableOpacity,} from 'react-native';
 import { useTheme } from "react-native-paper";
 import Icon from 'react-native-vector-icons/Ionicons';
 import {imgHeader} from "../../commons/images";
 import call from 'react-native-phone-call';
+
+const scheme = Platform.select({ios: 'maps:0,0?q=', android: 'geo:0,0?q='});
+const latLng = `${29.73370},${-95.84731}`;
+const label = 'Elevate Hair Salon';
+
+const url = Platform.select({
+  ios: `${scheme}${label}@${latLng}`,
+  android: `${scheme}${latLng}(${label})`,
+});
+
+const OpenMaps = () =>{
+  const handlePress = useCallback(async () => {
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+        await Linking.openURL(url);
+    } else {
+        Alert.alert(`Don't know how to open this URL: ${url}`);
+    }
+}, [url]);
+return <Icon name="navigate" color={'black'} size={35} onPress={handlePress}/>;
+};
 
 export default function Header() {
 
@@ -24,7 +45,7 @@ export default function Header() {
         <View style={styles.topPanel}>
         <View style={styles.topPanelContent}>
             <View style ={styles.mapArea}>
-                <Icon name="navigate" color={theme.colors.black} size={theme.hp('4%')} />
+                <OpenMaps/>
             </View>
 
             <View style={styles.logoArea}>
