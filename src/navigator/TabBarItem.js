@@ -55,7 +55,7 @@ export const TabBarItem = ({navigation, route, descriptors, state, index}) => {
     };
 
     const tabBarIcons = [
-        <Icon name="planet" color={theme.colors.black} size={theme.hp(isFocused? '4%':'2.8%')} />,
+        <Icon name="home" color={theme.colors.black} size={theme.hp(isFocused? '4%':'2.8%')} />,
         <Icon name="construct" color={theme.colors.black} size={theme.hp(isFocused? '4%':'2.8%')} />,
         <Icon name="alarm" color={theme.colors.black} size={theme.hp(isFocused? '4%':'2.8%')} />,
         <Icon name="cog" color={theme.colors.black} size={theme.hp(isFocused? '4%':'2.8%')} />,

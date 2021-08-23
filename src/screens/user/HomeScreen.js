@@ -139,7 +139,7 @@ export const HomeScreen = () => {
                       </TouchableOpacity>
                   }
                   <Image source={{uri: item.image}} style={styles.homeCatImage}/>
-                  <Text style={styles.homeCatTitle}>{item.title}</Text>
+                 {/*  <Text style={styles.homeCatTitle}>{item.title}</Text> */}
               </TouchableOpacity>
           )
       }

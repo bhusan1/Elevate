@@ -285,7 +285,7 @@ const submitColorService = () => {
 
         <ScrollView>
 
-          <ImageBackground source={imgBg} resizeMode="cover" style={styles.imageBG}>
+          
 
           <View style={styles.containerWomen}>
 
@@ -300,12 +300,12 @@ const submitColorService = () => {
                 keyExtractor={item=> JSON.stringify(item)}
               />
             </View>
-            </ImageBackground>
+            
 
             <View style={styles.divider}/>
 
 
-            <ImageBackground source={imgBg} resizeMode="cover" style={styles.imageBG}>
+            
            <View style={styles.containerMen}>
 
             <View style={styles.listHeadArea}>
@@ -320,11 +320,7 @@ const submitColorService = () => {
             />
           </View>
 
-          </ImageBackground>
-
           <View style={styles.divider}/>
-
-          <ImageBackground source={imgBg} resizeMode="cover" style={styles.imageBG}>
 
           <View style={styles.containerColor}>
 
@@ -340,8 +336,6 @@ const submitColorService = () => {
             />
 
         </View>
-        </ImageBackground>
-        
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -357,10 +351,10 @@ const useStyles = theme => StyleSheet.create({
     position:'relative',
     backgroundColor:'white',
   },
-  imageBG:{
+ /*  imageBG:{
     flex:1,
     justifyContent:'center',
-  },
+  }, */
   containerWomen: {
     flex: 1,
     width:'100%',
