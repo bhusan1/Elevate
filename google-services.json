@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "589669843505",
+    "project_id": "elevate-hair-salon",
+    "storage_bucket": "elevate-hair-salon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589669843505:android:0e7e1d9a85378ed696cb10",
+        "android_client_info": {
+          "package_name": "com.ssp.elevate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589669843505-1mq8gbdeahfi96alpgovpsi91v096pte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3RFIJMVNb2VzwfwSXjGEAqL-ICf_PZhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589669843505-1mq8gbdeahfi96alpgovpsi91v096pte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "589669843505-meqggqka5hercq6k9pjj2rerlee3iqv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ssp.elevate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
