@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>589669843505-meqggqka5hercq6k9pjj2rerlee3iqv4.apps.googleusercontent.com</string>
+	<string>589669843505-v49ka7bsfgk8jb68uo5s6patat4qquot.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.589669843505-meqggqka5hercq6k9pjj2rerlee3iqv4</string>
+	<string>com.googleusercontent.apps.589669843505-v49ka7bsfgk8jb68uo5s6patat4qquot</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBBIT17uTAAC9mWY4c2vW48dfoTTZNb-mY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ssp.elevate</string>
+	<string>com.ssp.Elevate</string>
 	<key>PROJECT_ID</key>
 	<string>elevate-hair-salon</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:589669843505:ios:f87aece3c604eae096cb10</string>
+	<string>1:589669843505:ios:943889085358d08c96cb10</string>
+	<key>DATABASE_URL</key>
+	<string>https://elevate-hair-salon-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

@@ -18,16 +18,32 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ssp.elevate"
+      "bundleIdentifier": "com.ssp.Elevate",
+      "buildNumber": "1",
+      "usesIcloudStorage": true,
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "NSCalendarsUsageDescription": "Elevate requires to enable Calendar usage"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.ssp.elevate",
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json",
+      "useNextNotificationsApi": true
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "notification": {
+      "icon": "./src/assets/icon.png",
+      "iosDisplayInForeground": true,
+      "androidMode": "default",
+      "androidCollapsedTitle": "Unread Notifications"
     }
   }
 }
